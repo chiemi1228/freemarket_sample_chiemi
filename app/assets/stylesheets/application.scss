@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "./reset";
+@import "./color";
+
+    .wrapper {
+       margin: 50px;
+       height: auto;
+    }
+        .sells {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+            .sell {
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                //background-color: #2f3e51;
+            }
