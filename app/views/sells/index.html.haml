@@ -1,6 +1,7 @@
 .wrapper
   .current-user_name 
     = "#{current_user.name}" + "さんのマイページ"
+  = link_to "ログアウト", destroy_user_session_path, method: :delete
   = link_to "商品登録", new_user_sell_path(current_user.id)
   .item_entry
     .sells

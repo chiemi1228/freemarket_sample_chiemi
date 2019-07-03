@@ -1,6 +1,6 @@
 class SellsController < ApplicationController
     def index
-        @sells = Sell.all
+        @sells = Sell.all.order('id DESC')
     end
 
     def new
@@ -16,6 +16,13 @@ class SellsController < ApplicationController
 
     def show
       @sell = Sell.find(params[:id])
+    end
+
+    def edit
+      @sell = Sell.find(params[:id])
+    end
+
+    def update
     end
 
     private
