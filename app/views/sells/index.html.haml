@@ -1,4 +1,6 @@
 .wrapper
+  .current-user_name 
+    = "#{current_user.name}" + "さんのマイページ"
   = link_to "商品登録", new_user_sell_path(current_user.id)
   .item_entry
     .sells
