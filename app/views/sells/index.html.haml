@@ -6,9 +6,6 @@
   .item_entry
     .sells
       - @sells.each do |sell|
-        -# = link_to "/users/#{sell.user_id}/sells/#{sell.id}" do
-        -# .sell.justifynd{:style => "background-image: url(#{sell.image});"}
-        -# = image_tag sell.image
         .sell
           = link_to "/users/#{sell.user_id}/sells/#{sell.id}" do
             = image_tag sell.image.url, class: 'lower-message__image'
