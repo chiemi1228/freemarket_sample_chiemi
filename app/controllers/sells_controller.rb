@@ -1,6 +1,7 @@
 class SellsController < ApplicationController
     def index
         @sells = Sell.all.order('id DESC')
+        @user = current_user
     end
 
     def new
@@ -25,6 +26,12 @@ class SellsController < ApplicationController
     def update
       @sell = Sell.find(params[:id])
       @sell.update(sell_params__update)
+      redirect_to "/"
+    end
+
+    def destroy
+      @sell = Sell.find(params[:id])
+      @sell.destroy
       redirect_to "/"
     end
 

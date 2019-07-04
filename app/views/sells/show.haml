@@ -7,7 +7,8 @@
     = "#{@sell.user.name}さんが出品しました"
 
   - if current_user.id == @sell.user_id
-    %li
-      = link_to '編集', "/users/#{@sell.user_id}/sells/#{@sell.id}/edit", method: :get
-    %li
-      = link_to '削除', " /users/#{@sell.user_id}/sells/#{@sell.id}", method: :delete
+    = link_to '編集', "/users/#{@sell.user_id}/sells/#{@sell.id}/edit", method: :get
+    = link_to '削除', " /users/#{@sell.user_id}/sells/#{@sell.id}", method: :delete
+  
+  - else
+    = link_to '購入する', "/users/#{current_user.id}/sells/#{@sell.id}/buys/new"
