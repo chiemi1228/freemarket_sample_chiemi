@@ -1,11 +1,12 @@
-%h1
-  出品する
-= form_for @sell, url: user_sells_path(current_user.id) do |f|
+.wrapper
+  %h1
+    出品する
+  = form_for @sell, url: user_sells_path(current_user.id) do |f|
 
-  = f.text_field :name, placeholder: '商品名', autocomplete: "off"
+    = f.text_field :name, placeholder: '商品名', autocomplete: "off"
 
-  = f.text_field :price, placeholder: '金額', autocomplete: "off"
+    = f.text_field :price, placeholder: '金額', autocomplete: "off"
 
-  = f.file_field :image, id: "message_image"
+    = f.file_field :image, id: "message_image"
 
-  = f.submit '出品'
+    = f.submit '出品'

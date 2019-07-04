@@ -23,11 +23,19 @@ class SellsController < ApplicationController
     end
 
     def update
+      @sell = Sell.find(params[:id])
+      @sell.update(sell_params__update)
+      redirect_to "/"
     end
 
     private
     def sell_params
       params.require(:sell).permit(:name, :image, :price).merge(user_id: params[:user_id])
     end
+
+    def sell_params__update
+      params.require(:sell).permit(:name, :image, :price)
+    end
+
 
 end

@@ -1,12 +1,13 @@
-.sell__name
-  = @sell.name
-.sell__price
-  = @sell.price
-.sell__user-name 
-  = @sell.user.name
+.wrapper
+  .sell__name
+    = @sell.name
+  .sell__price
+    = "#{@sell.price} 円"
+  .sell__user-name 
+    = "#{@sell.user.name}さんが出品しました"
 
-- if current_user.id == @sell.user_id
-  %li
-    = link_to '編集', "/users/#{@sell.user_id}/sells/#{@sell.id}/edit", method: :get
-  %li
-    = link_to '削除', " /users/#{@sell.user_id}/sells/#{@sell.id}", method: :delete
+  - if current_user.id == @sell.user_id
+    %li
+      = link_to '編集', "/users/#{@sell.user_id}/sells/#{@sell.id}/edit", method: :get
+    %li
+      = link_to '削除', " /users/#{@sell.user_id}/sells/#{@sell.id}", method: :delete

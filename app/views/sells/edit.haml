@@ -1,11 +1,12 @@
-%h1
-  編集する
-= form_for @sell, url: "/users/#{@sell.user_id}/sells/#{@sell.id}" do |f|
+.wrapper
+  %h1
+    編集する
+  = form_for @sell, url: "/users/#{@sell.user_id}/sells/#{@sell.id}" do |f|
 
-  = f.text_field :name, placeholder: '商品名', autocomplete: "off", value: "#{@sell.name}"
+    = f.text_field :name, placeholder: '商品名', autocomplete: "off", value: "#{@sell.name}"
 
-  = f.text_field :price, placeholder: '金額', autocomplete: "off", , value: "#{@sell.price}"
+    = f.text_field :price, placeholder: '金額', autocomplete: "off", value: "#{@sell.price}"
 
-  = f.file_field :image, id: "message_image"
+    = f.file_field :image, id: "message_image", value: "#{@sell.image}"
 
-  = f.submit '出品'
+    = f.submit '変更'
