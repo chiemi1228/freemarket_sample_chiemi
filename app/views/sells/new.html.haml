@@ -1,7 +1,7 @@
 .wrapper
   %h1
     出品する
-  = form_for @sell, url: "/users/#{@sell.user_id}/sells" do |f|
+  = form_for @sell, url: "/users/#{@sell.user_id}/sells", method: "post" do |f|
 
     = f.text_field :name, placeholder: '商品名', autocomplete: "off"
 

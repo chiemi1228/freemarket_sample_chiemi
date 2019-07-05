@@ -1,4 +1,6 @@
 class SellsController < ApplicationController
+  before_action :sign_in_display, only: :index
+
     def index
         @sells = Sell.all.order('id DESC')
         @user = current_user
@@ -44,5 +46,7 @@ class SellsController < ApplicationController
       params.require(:sell).permit(:name, :image, :price)
     end
 
-
+    def sign_in_display
+      redirect_to "/users/sign_in" unless user_signed_in?
+    end
 end

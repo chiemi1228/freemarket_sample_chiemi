@@ -9,4 +9,8 @@ class BuysController < ApplicationController
     @sell.destroy
     redirect_to "/"
   end
+
+  def index
+    @buys = Buy.where(user_id: current_user.id)
+  end
 end
