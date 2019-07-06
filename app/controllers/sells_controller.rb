@@ -13,9 +13,7 @@ class SellsController < ApplicationController
 
     def create
         @sell = Sell.new(sell_params)
-        @sell.image = sell_params[:image].original_filename
-        @sell.save!
-        binding.pry
+        @sell.save
         redirect_to "/"
     end
 
@@ -29,10 +27,7 @@ class SellsController < ApplicationController
 
     def update
       @sell = Sell.find(params[:id])
-      @sell.image = sell_params__update[:image].original_filename
-      @sell.name = sell_params__update[:name]
-      @sell.price = sell_params__update[:price]
-      @sell.save
+      @sell.update(sell_params__update)
       redirect_to "/"
     end
 
