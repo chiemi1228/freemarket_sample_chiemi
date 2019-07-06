@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: freemarket_sample_chiemi_production
-  username: freemarket_sample_chiemi
-  password: <%= ENV['FREEMARKET_SAMPLE_CHIEMI_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['chiemi1228'] %>
+  socket: /var/lib/mysql/mysql.sock
