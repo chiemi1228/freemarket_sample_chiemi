@@ -8,6 +8,6 @@
       - @sells.each do |sell|
         .sell
           = link_to "/users/#{sell.user_id}/sells/#{sell.id}" do
-            = image_tag sell.image.url, class: 'lower-message__image', size: "100x100"
+            = image_tag sell.image.url, size: "100x100"
             = sell.name
             = "#{sell.price}円"
