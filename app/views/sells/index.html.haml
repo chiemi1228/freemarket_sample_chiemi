@@ -17,8 +17,9 @@
     過去に購入した商品
     .current-user_buys
       - @buys.each do |buy|
-        = image_tag buy.image, size: "100x100"
-        = buy.name
-        = "#{buy.price}円"
-        = "#{buy.created_at}"
+        .buy
+          = image_tag buy.image, size: "100x100"
+          = buy.name
+          = "#{buy.price}円"
+          = "#{buy.created_at}"
 
