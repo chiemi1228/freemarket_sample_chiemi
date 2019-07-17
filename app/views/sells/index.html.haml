@@ -3,6 +3,8 @@
     = "#{@user.name}さんのマイページ"
   = link_to "ログアウト", destroy_user_session_path, method: :delete
   = link_to "商品登録", new_user_sell_path(@user.id)
+  .title
+    販売中の商品
   .item_entry
     .sells
       - @sells.each do |sell|
@@ -11,3 +13,11 @@
             = image_tag sell.image.url, size: "100x100"
             = sell.name
             = "#{sell.price}円"
+  過去に購入した商品
+  .current-user_buys
+    - @buys.each do |buy|
+      = image_tag buy.image, size: "100x100"
+      = buy.name
+      = "#{buy.price}円"
+      = "#{buy.created_at}"
+

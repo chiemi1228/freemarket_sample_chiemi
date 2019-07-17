@@ -4,6 +4,7 @@ class SellsController < ApplicationController
     def index
         @sells = Sell.all.order('id DESC')
         @user = current_user
+        @buys = Buy.where(user_id: current_user.id).order('id DESC')
     end
 
     def new
@@ -20,7 +21,7 @@ class SellsController < ApplicationController
     def show
       @sell = Sell.find(params[:id])
     end
-
+ 
     def edit
       @sell = Sell.find(params[:id])
     end
