@@ -5,7 +5,7 @@ class BuysController < ApplicationController
     @buy.name = @sell.name
     @buy.image = @sell.image
     @buy.price = @sell.price
-    @buy.save
+    @buy.save!
     @sell.destroy
     redirect_to "/"
   end

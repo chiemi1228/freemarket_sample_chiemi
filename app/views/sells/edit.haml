@@ -8,5 +8,5 @@
     = f.text_field :price, placeholder: '金額', autocomplete: "off", value: "#{@sell.price}"
 
     = f.file_field :image, value: "#{@sell.image}"
-
+    = f.hidden_field :image_cache
     = f.submit '変更'
