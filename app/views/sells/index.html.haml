@@ -1,5 +1,5 @@
 .wrapper
-  .current-user_name 
+  .current-user_name
     = "#{@user.name}さんのマイページ"
   = link_to "ログアウト", destroy_user_session_path, method: :delete
   = link_to "商品登録", new_user_sell_path(@user.id)
@@ -14,7 +14,7 @@
           = sell.name
           = "#{sell.price}円"
   .title_buys
-    過去に購入した商品
+    %h1 過去に購入した商品
     .current-user_buys
       - @buys.each do |buy|
         .buy
