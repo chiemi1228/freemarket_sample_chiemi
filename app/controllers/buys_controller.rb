@@ -7,6 +7,7 @@ class BuysController < ApplicationController
     @buy.price = @sell.price
     @buy.save!
     @sell.destroy
+    Time.zone ='Tokyo'
     redirect_to "/"
   end
 end
