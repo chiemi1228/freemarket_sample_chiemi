@@ -2,17 +2,18 @@
   .current-user_name
     = "#{@user.name}さんのマイページ"
   = link_to "ログアウト", destroy_user_session_path, method: :delete
-  = link_to "商品登録", new_user_sell_path(@user.id)
-  .title_sells
-    販売中の商品
-  .item_entry
-    .sells
-      - @sells.each do |sell|
-        .sell
-          = link_to "/users/#{sell.user_id}/sells/#{sell.id}" do
-            = image_tag sell.image.url, size: "100x100"
-          = sell.name
-          = "#{sell.price}円"
+  = link_to "出品する", new_user_sell_path(@user.id)
+  .sells_wrapper
+    .title_sells
+      販売中の商品
+    .item_entry
+      .sells
+        - @sells.each do |sell|
+          .sell
+            = link_to "/users/#{sell.user_id}/sells/#{sell.id}" do
+              = image_tag sell.image.url, size: "100x100"
+            = sell.name
+            = "#{sell.price}円"
   .title_buys
     %h1 過去に購入した商品
     .current-user_buys

@@ -1,10 +1,10 @@
-.wrapper
+.wrapper.show-page
   .sell__name
     = @sell.name
   .sell__price
     = "#{@sell.price} 円"
   .sell__user-name 
-    = "#{@sell.user.name}さんが出品しました"
+    = "#{@sell.user.name}さんが出品中"
 
   - if current_user.id == @sell.user_id
     = link_to '編集', "/users/#{@sell.user_id}/sells/#{@sell.id}/edit", method: :get
